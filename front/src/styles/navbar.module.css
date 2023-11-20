@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2eae1;
+  text-align: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 2rem;
+  min-width: 180px;
+}
+
+.title {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-left: 4px solid #feaf00;
+  padding-left: 0.3rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.logout{
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+.logout:hover{
+  cursor: pointer;
+  color: #c84c4c;
+}

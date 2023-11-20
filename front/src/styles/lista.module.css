@@ -1,0 +1,31 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.title td {
+  padding: 0.5rem 1rem;
+  color: #acacac;
+}
+
+.row {
+  background-color: #f2eae1;
+  border-bottom: 3px solid #fff;
+}
+.row:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.row td {
+  padding: 1rem;
+}
+
+.options {
+  display: flex;
+  gap: 1rem;
+}
+.options img:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

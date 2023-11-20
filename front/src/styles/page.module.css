@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.6rem 0;
+}
+
+.input {
+  margin: 1rem 0;
+  width: 350px;
+  min-height: 25px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid orange;
+}
+.input:focus {
+  outline: 1px solid orange;
+}

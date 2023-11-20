@@ -1,0 +1,147 @@
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.499);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #ffffff;
+  min-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+.container h2 {
+  color: #feaf00;
+}
+
+.input {
+  font-size: 1rem;
+  padding: 6px;
+  border-radius: 0.2rem;
+  border: 1px solid gray;
+  margin: 5px;
+}
+
+.input::placeholder {
+  color: #dee2e6;
+}
+
+.groupButtons {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.btn {
+  width: 120px;
+  height: 1.7rem;
+  font-size: 1rem;
+  border-radius: 4rem;
+  border: none;
+  transition: all 250ms ease 0s;
+  color: #ffffff;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn_primary {
+  background-color: #feaf00;
+}
+
+.btn_secondary {
+  border: 3px solid #feaf00;
+  background-color: #ffffff;
+  color: #feaf00;
+}
+.btn_delete {
+  background-color: #c84c4c;
+  color: white;
+}
+.btn:disabled {
+  opacity: 0.6;
+  background-color: #b07b07;
+  cursor: not-allowed;
+}
+
+.input_content {
+  padding: 1rem 1rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.input_content input {
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+}
+
+
+
+textarea {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid #dee2e6;
+  padding: 0.2rem;
+}
+
+select {
+  margin-top: 5px;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.422);
+}
+
+/*EDIT DETAIL*/
+.info {
+  display: flex;
+  padding: 1rem;
+  gap: 2rem;
+  width: 100%;
+}
+
+.info_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.4rem;
+}
+
+.info_content div {
+  width: 100%;
+  display: flex;
+  padding: 0.1rem 0;
+  align-items: center;
+  width: 250px;
+}
+.info_content:last-child{
+  width: 70%;
+}
+.info_content:first-child div {
+  min-width: 340px;
+}
+
+.info_content div  input{
+  width: 100%;
+}
+
+.info_content div  textarea{
+  width: 100%;
+}
