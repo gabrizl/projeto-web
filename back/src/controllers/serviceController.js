@@ -1,5 +1,5 @@
-const service = require('../models/service');
-const client = require('../models/client'); // Importe o modelo de serviço
+const service = require("../models/service");
+const client = require("../models/client"); // Importe o modelo de serviço
 
 // Controlador para criar um novo serviço
 const createService = async (req, res) => {
@@ -9,7 +9,7 @@ const createService = async (req, res) => {
     const newService = await service.create(serviceData);
     res.status(201).json(newService);
   } catch (error) {
-    res.status(500).json({ error: 'Erro ao criar o serviço' });
+    res.status(500).json({ error: "Erro ao criar o serviço" });
   }
 };
 
@@ -19,7 +19,7 @@ const listServices = async (req, res) => {
     const services = await service.find();
     res.status(200).json(services);
   } catch (error) {
-    res.status(500).json({ error: 'Erro ao listar os serviços' });
+    res.status(500).json({ error: "Erro ao listar os serviços" });
   }
 };
 
@@ -28,13 +28,16 @@ const updateService = async (req, res) => {
   try {
     const serviceId = req.params.id; // ID do serviço a ser atualizado
     const serviceData = req.body; // Novos dados do serviço
-    const updatedService = await service.updateOne({id:serviceId}, serviceData);
+    const updatedService = await service.updateOne(
+      { id: serviceId },
+      serviceData
+    );
     if (!updatedService) {
-      return res.status(404).json({ error: 'Serviço não encontrado' });
+      return res.status(404).json({ error: "Serviço não encontrado" });
     }
     res.status(200).json(updatedService);
   } catch (error) {
-    res.status(500).json({ error: 'Erro ao atualizar o serviço' });
+    res.status(500).json({ error: "Erro ao atualizar o serviço" });
   }
 };
 
@@ -42,14 +45,14 @@ const updateService = async (req, res) => {
 const deleteService = async (req, res) => {
   try {
     const serviceId = req.params.id; // ID do serviço a ser excluído
-    const deletedService = await service.findOne({id:serviceId});
+    const deletedService = await service.findOne({ id: serviceId });
     if (!deletedService) {
-      return res.status(404).json({ error: 'Serviço não encontrado' });
+      return res.status(404).json({ error: "Serviço não encontrado" });
     }
-    await service.deleteOne({id:serviceId})
+    await service.deleteOne({ id: serviceId });
     res.status(200).json(deletedService);
   } catch (error) {
-    res.status(500).json({ error: 'Erro ao excluir o serviço' });
+    res.status(500).json({ error: "Erro ao excluir o serviço" });
   }
 };
 
@@ -57,17 +60,16 @@ const getCarByClientName = async (req, res) => {
   const name = req.params.name;
 
   try {
-      const data = await client.find({ name: name });
-      console.log(data)
-      console.log(name);
-      const cars = data.map(client => client.car);
-      res.status(200).json(cars);
+    const data = await client.find({ name: name });
+    console.log(data);
+    console.log(name);
+    const cars = data.map((client) => client.car);
+    res.status(200).json(cars);
   } catch (error) {
-      console.error(error);
-      res.status(500).send('Erro interno do servidor');
+    console.error(error);
+    res.status(500).send("Erro interno do servidor");
   }
 };
-
 
 module.exports = {
   createService,
